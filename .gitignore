@@ -1,0 +1,7 @@
+*.pyc
+*.h5
+*.pickle
+*.pkl
+*.txt
+*.sw*
+*.out
