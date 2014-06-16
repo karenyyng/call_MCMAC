@@ -1,0 +1,8 @@
+#!/bin/bash
+
+for i in {0..19}
+do
+	prefix="EGindices_$i"
+	python ./parallel_input_elGordo.py $prefix &
+done
+
