@@ -1,8 +1,9 @@
 #!/bin/bash
-
+## this is a script for calling MCMAC in parallel using bash
+## this is to be replaced later on ...
 for i in {0..19}
 do
-	prefix="EGindices_$i"
+	prefix="EG_$i"
 	python ./parallel_input_elGordo.py $prefix &
 done
 

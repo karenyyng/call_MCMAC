@@ -8,10 +8,10 @@ import cPickle
 import numpy as np
 
 basepath = "./base_case/"
-newpath = "./added_indices/"
+newpath = "./indices/"
 baseprefix = "EG_"
 newprefix = "EGindices_"
-FileNo = 2
+FileNo = 20
 
 var = ['m_1',
        'm_2',
@@ -27,6 +27,7 @@ var = ['m_1',
        'T',
        'prob']
 
+# initialize all the file names to be compared in two lists
 basefiles = [basepath + baseprefix + str(no) + "_" + v + ".pickle" 
         for no in range(FileNo) for v in var]
 
@@ -36,7 +37,10 @@ testfiles = [newpath + newprefix + str(no) + "_" + v + ".pickle"
 def compare_pkl(file1, file2):
     f1 = cPickle.load(open(file1, "r"))
     f2 = cPickle.load(open(file2, "r"))
+    print "comparing {0} and {1}".format(file1, file2)
     assert np.array_equal(f1, f2), "{0} and {1} not equal".format(file1,
             file2)
 
+# the pythonic way of writing faster loops
 map(compare_pkl, basefiles, testfiles)    
+print "SUCCESS! All input files are identical"
