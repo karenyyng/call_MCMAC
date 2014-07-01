@@ -5,3 +5,5 @@
 *.txt
 *.sw*
 *.out
+*.fits
+*.ipynb

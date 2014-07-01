@@ -10,7 +10,7 @@ from __future__ import division
 import sys
 from MCMAC import MCengine
 import h5py
-import re 
+import re
 
 # this specifies the name of the output file
 if len(sys.argv) < 2:
@@ -20,7 +20,7 @@ if len(sys.argv) < 2:
 else:
     prefix = sys.argv[1]
     found = re.search("[a-zA-Z_]([0-9]+)", prefix)
-    try: 
+    try:
         seed = int(found.group(1))
     except AttributeError:
         sys.exit("prefix should have the form of [a-zA-Z_]([0-9]+)")
@@ -36,7 +36,7 @@ del_mesh = 100
 TSM_mesh = 200
 
 
-f = h5py.File("mock_d_proj_norm.h5", "r")
+f = h5py.File("mock_d_proj_norm_compressed.h5", "r")
 m_main = f["m_main"][...]
 m_sub = f["m_sub"][...]
 z_main = f["z_main"][...]
